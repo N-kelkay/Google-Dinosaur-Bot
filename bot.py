@@ -7,7 +7,7 @@ class coordinate ():
     replyBtn = (357, 365)  # Original numbers 357, 365
     dinosaur = (146, 369)
     # x and y coordinate of top left: X ->168,  y ->378
-    # y intersect -> 377
+    # y intersect -> 387
 
 
 def restartGame():
@@ -22,7 +22,7 @@ def pressSpace():
 
 
 def imageGrab():
-    box = (coordinate.dinosaur[0] + 60, coordinate.dinosaur[1], coordinate.dinosaur[0] + 100, coordinate.dinosaur[1]+30)
+    box = (coordinate.dinosaur[0] + 44, coordinate.dinosaur[1], coordinate.dinosaur[0] + 189, coordinate.dinosaur[1]+22)
     image = ImageGrab.grab(box)
     grayImage = ImageOps.grayscale(image)
     a = array(grayImage.getcolors())
