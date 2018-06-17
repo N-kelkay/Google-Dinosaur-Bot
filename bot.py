@@ -2,4 +2,9 @@ import pyautogui
 import time
 
 class coordinate():
-    replyBtn = (720, 1304)
+    replyBtn = (357, 365)
+
+def restartGame():
+    pyautogui.doubleClick(coordinate.replyBtn)
+
+restartGame()
