@@ -4,8 +4,10 @@ import time
 from PIL import ImageGrab, ImageOps
 
 class coordinate ():
-    replyBtn = (357, 365)
+    replyBtn = (357, 365)  # Original numbers 357, 365
     dinosaur = (146, 369)
+    # x and y coordinate of top left: X ->168,  y ->378
+    # y intersect -> 377
 
 
 def restartGame():
@@ -20,7 +22,7 @@ def pressSpace():
 
 
 def imageGrab():
-    box = (coordinate.dinosaur[0] + 240, coordinate.dinosaur[1], coordinate.dinosaur[0] + 280, coordinate.dinosaur[1] + 30);
+    box = (coordinate.dinosaur[0] + 60, coordinate.dinosaur[1], coordinate.dinosaur[0] + 100, coordinate.dinosaur[1]+30)
     image = ImageGrab.grab(box)
     grayImage = ImageOps.grayscale(image)
     a = array(grayImage.getcolors())
@@ -29,7 +31,7 @@ def imageGrab():
 def main():
     restartGame()
     while True:
-        if(imageGrab() == 1447):
+        if(imageGrab() != 1447):
             pressSpace()
             time.sleep(0.1)
 
