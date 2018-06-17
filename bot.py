@@ -1,3 +1,4 @@
+from PIL import ImageGrab, ImageOps
 import pyautogui
 import time
 
@@ -16,6 +17,11 @@ def pressSpace():
     time.sleep(0.05)
     print("Jump")
     pyautogui.keyUp('space')
+
+def imageGrab():
+    box = (coordinate.dinosaur[0] + 240, coordinate.dinosaur[1], coordinate.dinosaur[0] + 280, coordinate.dinosaur[1] + 30);
+    image = ImageGrab.grab(box)
+    grayImage = ImageOps.grayscale(image)
 
 
 restartGame()
